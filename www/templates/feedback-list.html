@@ -1,0 +1,54 @@
+<ion-view view-title="Geri Bildirimler">
+  <ion-content>
+    <div class="list card" ng-repeat="feedback in feedbacks">
+
+      <div class="item" style="padding: 0; text-align: right;">
+        <div class="row">
+          <div class="col-40 category-icon-container"><i class="icon ion-loop"></i>
+          </div>
+          <div class="col-50">
+            <p class="">Posted on {{feedback.createDate}}</p>
+
+            <p>by {{feedback.user.displayName}}</p>
+          </div>
+          <div class="col-10 flex-center-aligner" ng-click="showOptions(feedback.feedbackId)">
+            <i class="icon ion-gear-a" style="font-size: 26px; color: red;"></i>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <h2 class="item-title-text">{{feedback.title}}</h2>
+
+        <p>{{feedback.description}}</p>
+      </div>
+      <ion-item>
+        <div class="row" style="text-align: center; font-size: 20px; font-weight: bold;">
+          <div class="col-50" ng-click="addComment(feedback.announcementId)">
+            <i class="icon ion-ios-chatbubble-outline post-interaction" style="font-size: 25px;"></i>
+            {{feedback.comments.length || 0}}
+          </div>
+          <div class="col-50" ng-click="like(feedback.feedbackId)">
+            <i class="icon ion-ios-heart-outline post-interaction" ng-class="{assertive: feedback.liked}"
+               style="font-size: 25px;"></i>
+            {{feedback.likeCount}}
+          </div>
+        </div>
+      </ion-item>
+
+      <ion-item class="item-avatar" ng-repeat="comment in feedback.comments">
+        <img ng-src="{{comment.user.avatar}}">
+
+        <h2><b>{{comment.user.displayName}}:</b> {{comment.content}}</h2>
+
+        <p>{{comment.createDate}} <i class="icon ion-thumbsup comment-like"
+                                     ng-click="likeComment(feedback.feedbackId, comment.commentId)"
+                                     ng-class="{assertive: comment.liked}"></i>
+          {{comment.likeCount}}</p>
+      </ion-item>
+
+    </div>
+  </ion-content>
+</ion-view>

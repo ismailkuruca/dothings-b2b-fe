@@ -1,0 +1,22 @@
+<ion-view hide-nav-bar="true">
+  <ion-content has-header="false" class="login-cover center-flex">
+
+
+    <ion-list>
+      <label class="item item-input" style="border-radius: 40px;">
+        <input type="text" ng-model="user.email" placeholder="Kullanıcı Adı">
+      </label>
+
+      <div style="height: 30px;"></div>
+      <label class="item item-input" style="border-radius: 40px;">
+        <input type="password" ng-model="user.password" placeholder="Şifre">
+      </label>
+
+      <div style="height: 30px;"></div>
+
+      <button class="button button-assertive button-block" ng-click="login()" style="border-radius: 40px;">Login</button>
+      <button class="button button-assertive button-block" ng-click="register()" style="border-radius: 40px;">Register</button>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-view view-title="Liderlik Tablosu">
+  <tab-slide-box>
+    <div class="tsb-icons">
+      <div class="tsb-ic-wrp">
+        <div class="row leaderboard-tab-container">
+          <div class="col-50 leaderboard-tab" style="border-right: 1px solid lightgray;">
+            <i class="icon icon-user">
+              <a href="javascript:;">Bireysel</a>
+            </i>
+          </div>
+          <div class="col-50 leaderboard-tab">
+            <i class="icon icon-team">
+              <a href="javascript:;">Takımım</a></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ion-slide-box show-pager="false" on-slide-changed="slideHasChanged($index)">
+      <ion-slide>
+        <ion-content has-header="false">
+          <div class="list" style="margin-bottom: 200px;">
+            <ion-item class="item-avatar" ng-repeat="item in individual track by $index">
+              <img ng-src="{{item.avatar}}">
+
+              <h2 style="text-align: left;">{{item.displayName}}</h2>
+              <span class="badge badge-assertive" style="width: 50px;"><p style="margin: 0 auto; color: white;">{{$index + 1}}</p></span>
+            </ion-item>
+          </div>
+          <ion-infinite-scroll ng-if="moreIndividual" on-infinite="loadMoreIndividual()" distance="10%">Daha fazla
+            yükle...
+          </ion-infinite-scroll>
+        </ion-content>
+      </ion-slide>
+      <ion-slide>
+        <ion-content has-header="false">
+          <div class="list" style="margin-bottom: 200px;">
+            <ion-item class="item-avatar" ng-repeat="item in team track by $index">
+              <img ng-src="{{item.avatar}}">
+
+              <h2 style="text-align: left;">{{item.displayName}}</h2>
+              <span class="badge badge-assertive" style="width: 50px;"><p style="margin: 0 auto; color: white;">{{$index + 1}}</p></span>
+            </ion-item>
+          </div>
+          <ion-infinite-scroll ng-if="moreTeam" on-infinite="loadMoreTeam()" distance="10%">Daha fazla yükle...
+          </ion-infinite-scroll>
+        </ion-content>
+      </ion-slide>
+    </ion-slide-box>
+  </tab-slide-box>
+</ion-view>

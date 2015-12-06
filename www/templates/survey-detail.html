@@ -1,0 +1,98 @@
+<ion-view view-title="Değerlendirme">
+  <ion-content>
+
+    <div class="list card">
+      <div class="item" style="padding: 0; text-align: right;">
+        <div class="row">
+          <div class="col-40 category-icon-container"><i class="icon icon-evaluation"></i>
+          </div>
+          <div class="col-50">
+            <p class="">Posted on {{survey.createDate}}</p>
+
+            <p>by {{survey.user.displayName}}</p>
+          </div>
+          <div class="col-10 flex-center-aligner" ng-click="showOptions(survey.surveyId)">
+            <i class="icon ion-gear-a" style="font-size: 26px; color: red;"></i>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="item">
+        <h2 class="item-title-text">{{survey.title}}</h2>
+
+        <p>{{survey.description}}</p>
+      </div>
+    </div>
+    <div class="list card" ng-repeat="poll in survey.elements.polls">
+
+      <div class="item" style="padding: 0; text-align: right;">
+        <div class="row">
+          <div class="col-40 category-icon-container"><i class="icon icon-evaluation"></i>
+          </div>
+          <div class="col-50">
+            <p class="">Posted on {{survey.createDate}}</p>
+
+            <p>by {{survey.createDate}}</p>
+          </div>
+          <div class="col-10 flex-center-aligner">
+            <i class="icon ion-gear-a" style="font-size: 26px;"></i>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <h2 class="item-title-text">{{poll.title}}</h2>
+
+        <p>{{poll.description}}</p>
+      </div>
+
+
+      <ion-radio name="{{poll.id}}" ng-repeat="choice in poll.choices" ng-model="choice.id" class="poll-radio"
+                 style="background: linear-gradient(90deg, green {{choice.percentage}}%, green {{choice.percentage}}%, transparent {{choice.percentage}}%, transparent {{100 - choice.percentage}}%);">
+        {{choice.description}}
+      </ion-radio>
+
+    </div>
+
+
+    <div class="list card" ng-repeat="text in survey.elements.texts">
+
+      <div class="item" style="padding: 0; text-align: right;">
+        <div class="row">
+          <div class="col-40 category-icon-container"><i class="icon icon-evaluation"></i>
+          </div>
+          <div class="col-50">
+            <p class="">Posted on {{survey.createDate}}</p>
+
+            <p>by {{survey.createDate}}</p>
+          </div>
+          <div class="col-10 flex-center-aligner">
+            <i class="icon ion-gear-a" style="font-size: 26px;"></i>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="item">
+        <h2 class="item-title-text">{{text.title}}</h2>
+
+        <p>{{text.description}}</p>
+      </div>
+
+      <label class="item item-input">
+        <span class="input-label">Email</span>
+        <textarea type="text" style="height: 80px;"></textarea>
+      </label>
+
+    </div>
+
+    <div class="padding">
+      <button class="button button-block theme-button">Değerlendirmeyi Tamamla</button>
+    </div>
+
+  </ion-content>
+</ion-view>

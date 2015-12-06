@@ -1,0 +1,104 @@
+<ion-view title="PROFİLİM">
+  <ion-content style="background-color: rgb(232, 232, 232); top: 0px;">
+    <div class="profile-container">
+      <div class="profile-outer">
+        <img class="profile-avatar" ng-src="img/ionic.png">
+
+        <div class="profile-inner-container">
+
+          <div class="profile-name-container">isim soyisim</div>
+          <div class="profile-inner">
+            <i class="icon ion-person profile-tag-icon"></i>
+
+            <div class="profile-tag-name">@abuzer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row profile-stats-container">
+      <div class="col-33 text-center profile-stats"><span>35</span>
+
+        <p>GÖREV OLUŞTURDU</p></div>
+      <div class="col-33 text-center profile-stats"><span>335</span>
+
+        <p>GÖREV TAMAMLADI</p></div>
+      <div class="col-33 text-center profile-stats"><span>1225</span>
+
+        <p>PUAN</p></div>
+    </div>
+
+    <div class="row" style="margin-top: 10px;">
+      <div class="col-33 daily-needs">
+        <div class="profile-cards">
+          <p>UYKU</p>
+          <i class="icon-sleep" style="color: limegreen;"></i>
+
+          <p>7 sa / 8 sa</p>
+        </div>
+      </div>
+      <div class="col daily-needs" ng-click="setAmount()">
+        <div class="profile-cards">
+          <p>HEDEF MİKTARI SEÇİNİZ</p>
+          <br/>
+
+          <p style="font-size: 28px;">{{amount}} {{type}}</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row" style="padding-right: 15px;">
+      <div class="col" style="text-align: center; margin: 0 !important; padding: 0 !important;">
+        <div class="row daily-needs" style="margin-bottom: 0 !important;">
+         <p style="margin: 0 auto; color: lightgray;">Yıllık Sayılar (Hedefe Göre)</p>
+        </div>
+        <div class="row" style="margin: 0 !important; padding: 0 !important; margin-bottom: 0 !important;">
+          <div class="col-50 daily-needs chart-container" style="margin-right: 0px !important; padding: 20px; margin-top: 0 !important;">
+            <canvas id="doughnut" class="chart chart-doughnut" height=300 width=300
+                    chart-data="data" chart-labels="labels" chart-colours="colours">
+            </canvas>
+          </div>
+          <div class="col-50 daily-needs legend-container"
+               style="margin-left: 0px !important; box-shadow: lightgray 1px 1px 0px 1px !important; margin-top: 0 !important;">
+            <div style="flex: 1; width: 100px;">
+              <div ng-repeat="color in colours track by $index" class="row"
+                   style="min-height: 25px;  background-color: {{color.fillColor}}; color:white;">
+                <div style="width: 70%;">{{labels[$index]}}</div>
+                <div stlye="width: 30%;">{{data[$index]}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col daily-needs">
+        <ion-slide-box active-slide="0" style="min-height: 100px;">
+          <ion-slide>
+            <div class="profile-cards">
+              <p>Yıllık Toplam Saat</p>
+
+              <p style="font-size: 28px;">2847 saat</p>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="profile-cards">
+              <p>Aylık Toplam Saat</p>
+
+              <p style="font-size: 28px;">444 saat</p>
+            </div>
+          </ion-slide>
+          <ion-slide>
+            <div class="profile-cards">
+              <p>Günlük Toplam Saat</p>
+
+              <p style="font-size: 28px;">5 saat</p>
+            </div>
+          </ion-slide>
+        </ion-slide-box>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

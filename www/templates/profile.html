@@ -1,0 +1,115 @@
+<ion-view title="Profilim">
+  <ion-content style="background-color: rgb(232, 232, 232); top: 0px;">
+    <div class="profile-container">
+      <div class="profile-outer">
+        <img class="profile-avatar" ng-src="img/ionic.png">
+
+        <div class="profile-inner-container">
+
+          <div class="profile-name-container">isim soyisim</div>
+          <div class="profile-inner">
+            <i class="icon ion-person profile-tag-icon"></i>
+
+            <div class="profile-tag-name">@abuzer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row profile-stats-container">
+      <div class="col-33 text-center profile-stats"><span>35</span>
+
+        <p>GÖREV OLUŞTURDU</p></div>
+      <div class="col-33 text-center profile-stats"><span>335</span>
+
+        <p>GÖREV TAMAMLADI</p></div>
+      <div class="col-33 text-center profile-stats"><span>1225</span>
+
+        <p>PUAN</p></div>
+    </div>
+
+    <div class="mood-container">
+      <div class="row padding text-center"><p>ŞU ANDA NASIL HİSSEDİYORSUN?</p></div>
+      <div class="row text-center">
+        <div class="col-20">
+          <div class="row"><p>ÜZGÜN</p></div>
+          <p></p>
+
+          <div class="row"><p>25%</p></div>
+        </div>
+        <div class="col-20">
+          <div class="row"><p>YORGUN</p></div>
+          <p></p>
+
+          <div class="row"><p>25%</p></div>
+        </div>
+        <div class="col-20">
+          <div class="row"><p>NORMAL</p></div>
+          <p></p>
+
+          <div class="row"><p>25%</p></div>
+        </div>
+        <div class="col-20">
+          <div class="row"><p>İYİ</p></div>
+          <p></p>
+
+          <div class="row"><p>25%</p></div>
+        </div>
+        <div class="col-20">
+          <div class="row"><p>SÜPER</p></div>
+          <p></p>
+
+          <div class="row"><p>25%</p></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="team-container">
+      <div style="padding: 20px;">
+        <p>TAKIM:</p>
+
+        <p>KURUMSAL PAZARLAMA</p></div>
+    </div>
+
+    <div class="row">
+      <div class="col daily-needs" ng-click="navigate('water')">
+        <div class="profile-cards">
+          <p>SU MİKTARI</p>
+          <i class="icon-water" style="color: cornflowerblue;"></i>
+
+          <p>1.4 lt / 2.4 lt</p>
+        </div>
+      </div>
+      <div class="col daily-needs" ng-click="navigate('walk')">
+        <div class="profile-cards">
+          <p>HAREKET</p>
+          <i class="icon-walk" style="color: brown;"></i>
+
+          <p>1.4 lt / 2.4 lt</p>
+        </div>
+      </div>
+      <div class="col daily-needs" ng-click="navigate('sleep')">
+        <div class="profile-cards">
+          <p>UYKU</p>
+          <i class="icon-sleep" style="color: limegreen;"></i>
+
+          <p>1.4 lt / 2.4 lt</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="width: 95%; margin: 0 auto;">
+      <div style="margin: 0 5px 0 0 !important;" class="col daily-needs">
+        <div class="profile-cards" style="padding: 20px;">
+          <p>ETKİNLİKLERİ</p>
+        </div>
+      </div>
+      <div style="margin: 0 0 0 5px !important;" class="col daily-needs">
+        <div class="profile-cards" style="padding: 20px;">
+          <p>TURNUVALARI</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+
+</ion-view>

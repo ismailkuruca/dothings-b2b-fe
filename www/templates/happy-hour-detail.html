@@ -1,0 +1,46 @@
+<ion-view title="{{happyHour.title}}">
+  <ion-content>
+    <ion-item class="item-image" style="padding: 0;">
+      <img ng-src="{{happyHour.image}}">
+    </ion-item>
+    <ion-item style="white-space: pre-wrap">
+      <p style="white-space: normal;">{{happyHour.description}}</p>
+    </ion-item>
+    <ion-item>
+      <i class="icon icon-location category-icon-container" style="font-size: 24px;"></i>
+      {{happyHour.address}}
+    </ion-item>
+    <ion-item>
+      <i class="icon icon-calendar-2 category-icon-container" style="font-size: 24px;"></i>
+      {{happyHour.createDate}}
+    </ion-item>
+    <ion-item>
+      <i class="icon icon-calendar-2 category-icon-container" style="font-size: 24px;"></i>
+      {{happyHour.endDate}}
+    </ion-item>
+    <ion-item>Tamamlayanlar</ion-item>
+    <ion-item>
+      <div class="row" ng-repeat="image in images" ng-if="$index % 3 === 0">
+        <div class="col col-33" ng-if="$index < images.length">
+          <img ng-src="{{images[$index].src}}" width="100%" style="border-radius: 150px;"/>
+
+          <p style="text-align: center;">test</p>
+        </div>
+        <div class="col col-33" ng-if="$index + 1 < images.length">
+          <img ng-src="{{images[$index + 1].src}}" width="100%" style="border-radius: 150px;"/>
+
+          <p style="text-align: center;">test</p>
+        </div>
+        <div class="col col-33" ng-if="$index + 2 < images.length">
+          <img ng-src="{{images[$index + 2].src}}" width="100%" style="border-radius: 150px;"/>
+
+          <p style="text-align: center;">test</p>
+        </div>
+      </div>
+    </ion-item>
+
+
+
+  </ion-content>
+
+</ion-view>
